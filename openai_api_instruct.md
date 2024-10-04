@@ -1,3 +1,4 @@
+
 ## 模型base_url
 
 | 模型名称 | 模型版本            | base url |
@@ -5,6 +6,8 @@
 | Qwen     | Qwen2.5-7B-Instruct |          |
 | xinghuo  |                     |          |
 | Claude   |                     |          |
+
+![](619766a57f5df3279.jpg)
 
 ## API说明
 
@@ -34,6 +37,7 @@ client = OpenAI()
 client.models.list()
 
 ```
+![](129508977-205c322b-2a1c-4494-a9a4-732ae0919ef3.png)
 
 #### Respond
 
@@ -65,8 +69,7 @@ client.models.list()
 
 ```
 
-
-### 进行对话
+### 2 进行对话
 
 {base_url}/chat/completions
 
@@ -92,8 +95,7 @@ curl https://api.openai.com/v1/chat/completions \
 
 ```
 
-
-#### python
+#### 2.2 python
 
 ```python
 from openai import OpenAI
@@ -111,7 +113,7 @@ print(completion.choices[0].message)
 
 ```
 
-#### Respond
+#### 2.3 Respond
 
 ```python
 {
