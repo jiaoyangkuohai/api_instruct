@@ -52,8 +52,9 @@ class stoc:
                 + f'<a href="#{norm_text}" class="toc"> {title}</a> \n'
             )
         st.sidebar.write(markdown_toc, unsafe_allow_html=True)
-
+    
     @classmethod
+    @st.cache_data
     def from_markdown(cls, text: str):
         self = cls()
         new_text = ""
