@@ -3,7 +3,7 @@ from stoc import stoc
 import streamlit as st
 import re
 
-@st.cache_data
+# @st.cache_data
 def read_data():
     with open("version.txt", "r", encoding="utf-8") as file:
         version = file.read()
@@ -16,8 +16,9 @@ def read_data():
     return version, markdown_text, PDFbyte
 def main():
     version, markdown_text, PDFbyte = read_data()
-    stoc.from_markdown(markdown_text)
-
+    on = st.sidebar.toggle("展开所有目录")
+    stoc.from_markdown(markdown_text, expand_contents=on)
+    st.sidebar.divider()
     st.sidebar.download_button(label="下载离线PDF文档",
                         data=PDFbyte,
                         file_name=f"算法接口说明文档_{str(version)}.pdf",
